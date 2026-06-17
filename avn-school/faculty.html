@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Faculty - A.V.N. Inter College</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <div id="navbar"></div>
+  <main class="py-5">
+    <div class="container">
+      <h1>Our Faculty</h1>
+      <p class="lead">A dedicated team of 18 teachers committed to academic excellence.</p>
+      <div class="row g-3 mt-3">
+        <!-- 18 teacher cards -->
+        <script>
+          const teachers = [
+            ['Mrs. A','Mathematics','M.Sc.'],['Mr. B','Physics','M.Sc.'],['Ms. C','Chemistry','M.Sc.'],['Mr. D','Biology','M.Sc.'],
+            ['Ms. E','English','M.A.'],['Mr. F','Hindi','M.A.'],['Ms. G','History','M.A.'],['Mr. H','Geography','M.A.'],
+            ['Ms. I','Computer','MCA'],['Mr. J','Physical Ed','B.P.Ed'],['Ms. K','Art','MFA'],['Mr. L','Music','M.A.'],
+            ['Ms. M','Economics','M.A.'],['Mr. N','Sociology','M.A.'],['Ms. O','Political Science','M.A.'],['Mr. P','Work Ed','B.Ed.'],
+            ['Ms. Q','Counselor','M.Phil'],['Mr. R','Managerial','MBA']
+          ];
+          let out='';teachers.forEach(t=>{
+            out += `<div class="col-sm-6 col-md-4 col-lg-3" data-aos="fade-up"><div class="teacher-card p-3"><div class="teacher-photo"></div><h6>${t[0]}</h6><p class="muted">${t[1]} • ${t[2]}</p></div></div>`;
+          });
+          document.write(out);
+        </script>
+      </div>
+    </div>
+  </main>
+  <div id="footer"></div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
