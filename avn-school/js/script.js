@@ -1,21 +1,59 @@
 // Global script for AVN Inter College site
 document.addEventListener('DOMContentLoaded', function(){
   // Load navbar and footer
-  fetch('components/navbar.html').then(r=>r.text()).then(html=>{
-    document.getElementById('navbar').innerHTML = html;
-    attachNavHandlers();
-  }).catch(()=>{});
-  fetch('components/footer.html').then(r=>r.text()).then(html=>{
-    document.getElementById('footer').innerHTML = html;
-    document.getElementById('copyYear').textContent = new Date().getFullYear();
-  }).catch(()=>{});
+  const loadComponent = (selector, url, fallbackHtml, onComplete) => {
+    fetch(url).then(r=>r.text()).then(html=>{
+      const el = document.getElementById(selector);
+      if(el){el.innerHTML = html;}
+      onComplete && onComplete();
+    }).catch(()=>{
+      const el = document.getElementById(selector);
+      if(el){
+        el.innerHTML = fallbackHtml;
+      }
+      onComplete && onComplete();
+    });
+  };
+
+  const navFallback = `
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <span class="logo-placeholder">A.V.N.</span>
+          <div class="ms-2">
+            <div class="school-name">A.V.N. Inter College</div>
+            <div class="school-sub">Jethwara, Pratapgarh</div>
+          </div>
+        </a>
+      </div>
+    </nav>
+  `;
+
+  const footerFallback = `
+    <footer class="site-footer py-5">
+      <div class="container text-center text-white">
+        <p><strong>A.V.N. Inter College</strong></p>
+        <p>Uttar Pradesh, Jethwara, Pratapgarh - 230129</p>
+        <p><small>Loading footer failed. Please open this page from the site's root folder.</small></p>
+      </div>
+    </footer>
+  `;
+
+  loadComponent('navbar', './components/navbar.html', navFallback, attachNavHandlers);
+  loadComponent('footer', './components/footer.html', footerFallback, ()=>{
+    const copyYear = document.getElementById('copyYear');
+    if(copyYear) copyYear.textContent = new Date().getFullYear();
+  });
 
   // Loading screen
-  window.addEventListener('load', ()=>{
+  const removeLoader = ()=>{
     const loader = document.getElementById('loadingScreen');
-    if(loader){loader.style.opacity=0;setTimeout(()=>loader.remove(),600)}
+    if(loader){loader.style.opacity = '0'; setTimeout(()=>loader.remove(),600);}  
     AOS && AOS.refresh();
-  });
+  };
+
+  window.addEventListener('load', removeLoader);
+  setTimeout(removeLoader, 2000);
 
   // Theme handling (default to light for visibility)
   const themeKey = 'avn-theme';
