@@ -5,29 +5,121 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Faculty - A.V.N. Inter College</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <div id="navbar"></div>
   <main class="py-5">
     <div class="container">
       <h1>Our Faculty</h1>
-      <p class="lead">A dedicated team of 18 teachers committed to academic excellence.</p>
-      <div class="row g-3 mt-3">
-        <!-- 18 teacher cards -->
-        <script>
-          const teachers = [
-            ['Mrs. A','Mathematics','M.Sc.'],['Mr. B','Physics','M.Sc.'],['Ms. C','Chemistry','M.Sc.'],['Mr. D','Biology','M.Sc.'],
-            ['Ms. E','English','M.A.'],['Mr. F','Hindi','M.A.'],['Ms. G','History','M.A.'],['Mr. H','Geography','M.A.'],
-            ['Ms. I','Computer','MCA'],['Mr. J','Physical Ed','B.P.Ed'],['Ms. K','Art','MFA'],['Mr. L','Music','M.A.'],
-            ['Ms. M','Economics','M.A.'],['Mr. N','Sociology','M.A.'],['Ms. O','Political Science','M.A.'],['Mr. P','Work Ed','B.Ed.'],
-            ['Ms. Q','Counselor','M.Phil'],['Mr. R','Managerial','MBA']
-          ];
-          let out='';teachers.forEach(t=>{
-            out += `<div class="col-sm-6 col-md-4 col-lg-3" data-aos="fade-up"><div class="teacher-card p-3"><div class="teacher-photo"></div><h6>${t[0]}</h6><p class="muted">${t[1]} • ${t[2]}</p></div></div>`;
-          });
-          document.write(out);
-        </script>
+      <p class="lead">A dedicated team of  teachers committed to academic excellence.</p>
+      <div class="row g-4 mt-4">
+        <div class="col-12">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 g-4">
+            <div class="col">
+              <div class="card faculty-card h-100 shadow-sm border-0">
+                <div class="faculty-photo">
+                  <img src="images/principal.jpeg" alt="Skand Tiwari" class="card-img-top img-fluid">
+                </div>
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Mr. Skand Tiwari</h5>
+                  <p class="faculty-qualification mb-0">M.Sc. (Mathematics), B.Ed.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card faculty-card h-100 shadow-sm border-0">
+                <div class="faculty-photo">
+                  <img src="images/Rajesh.jpeg" alt="Rajesh Kumar Shrivastava" class="card-img-top img-fluid">
+                </div>
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Mr. Rajesh Kumar Shrivastava</h5>
+                  <p class="faculty-qualification mb-0">M.A., B.P.Ed.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card faculty-card h-100 shadow-sm border-0">
+                <div class="faculty-photo">
+                  <img src="images/Vijay.jpeg" alt="Vijay Pal" class="card-img-top img-fluid">
+                </div>
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Vijay Pal</h5>
+                  <p class="faculty-qualification mb-0">M.A., B.Ed.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card faculty-card h-100 shadow-sm border-0">
+                <div class="faculty-photo">
+                  <img src="images/Ghanshyam.jpeg" alt="Ghanshyam" class="card-img-top img-fluid">
+                </div>
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Mr. Ghanshyam</h5>
+                  <p class="faculty-qualification mb-0">M.A., B.Ed.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card faculty-card h-100 shadow-sm border-0">
+                <div class="faculty-photo">
+                  <img src="images/Rajeev.jpeg" alt="Rajeev Kumar Sonkar" class="card-img-top img-fluid">
+                </div>
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Mr. Rajeev Kumar Sonkar</h5>
+                  <p class="faculty-qualification mb-0">M.A., B.Ed.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card faculty-card h-100 shadow-sm border-0">
+                <div class="faculty-photo">
+                  <img src="images/Mukesh.jpeg" alt="Mukesh Shukla" class="card-img-top img-fluid">
+                </div>
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Mr. Mukesh Shukla</h5>
+                  <p class="faculty-qualification mb-0">M.Sc. (Chemistry), B.Ed.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card faculty-card h-100 shadow-sm border-0">
+                <div class="faculty-photo">
+                  <img src="images/Susheel.jpeg" alt="Susheel Kumar" class="card-img-top img-fluid">
+                </div>
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Mr. Susheel Kumar</h5>
+                  <p class="faculty-qualification mb-0">M.Sc. (Mathematics), B.Ed.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card faculty-card h-100 shadow-sm border-0">
+                <div class="faculty-photo">
+                  <img src="images/Deep.jpeg" alt="Deep Kumar Vishwakarma" class="card-img-top img-fluid">
+                </div>
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Mr.Deep Kumar Vishwakarma</h5>
+                  <p class="faculty-qualification mb-0">P.G.D.C.A.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card faculty-card h-100 shadow-sm border-0">
+                <div class="faculty-photo">
+                  <img src="images/Anuj.jpeg" alt="Anuj Kashyap" class="card-img-top img-fluid">
+                </div>
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Mr. Anuj Kashyap</h5>
+                  <p class="faculty-qualification mb-0">M.sc , B.Ed</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </main>
